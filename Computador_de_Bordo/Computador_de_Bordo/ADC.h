@@ -3,10 +3,10 @@
 
 #include "def_principais.h"
 
-char convertido = 1;
+unsigned int conv;
 
-int ADC_begin();
-int lerAnalog(char);
+void ADC_begin();
+int lerAnalog(unsigned char);
 float tensao(char);
 
 
