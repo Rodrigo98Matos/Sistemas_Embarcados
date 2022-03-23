@@ -7,7 +7,10 @@ unsigned int conv;
 
 void ADC_begin();
 int lerAnalog(unsigned char);
-float tensao(char);
+float tensao(unsigned char);
+double R1(unsigned char pin);
+double R2(unsigned char pin);
+double ntc_10k(unsigned char pin);
 
 
 
