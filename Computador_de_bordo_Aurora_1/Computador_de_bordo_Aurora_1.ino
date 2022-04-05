@@ -13,11 +13,13 @@
 
 void setup() {
   USART_Inic(9600);
+  mag.initialize();
 
 
 }
 
 void loop() {
+  mag.getHeading(&mx, &my, &mz);
   //Serial.println(ntc_10k(2));
     char t1[] = "Temperatura:  ";
     char b1[] = "\tBateria1:  ";
