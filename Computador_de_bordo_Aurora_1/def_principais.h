@@ -22,9 +22,7 @@
 
 
 
-typedef struct{
- int16_t x, y, z;
-} GY273;
+
 
 
 
