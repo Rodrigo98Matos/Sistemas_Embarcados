@@ -42,7 +42,7 @@ double ntc_10k(uint8_t pin){
   return temp - 273.15;         //Retorna Temperatura em Celsius
 }
 double bat2(uint8_t pin, double b1){
-  return (tensao(pin)/(0.5))-b1; //tensão/(R1/(R1+R2)) retorna a tensão de entrada do divisor de tensão menos a tensão da primeira bateria
+  return (tensao(pin)/(0.50))-b1; //tensão/(R1/(R1+R2)) retorna a tensão de entrada do divisor de tensão menos a tensão da primeira bateria
 }
 double tensao_mv(uint8_t pin){//Tensão em mV
   int leitura = analogRead(pin);
