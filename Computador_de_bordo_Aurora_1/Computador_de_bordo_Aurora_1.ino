@@ -19,6 +19,8 @@ void setup() {
 }
 
 void loop() {
+  HMC5883L mag;
+  GY273 
   mag.getHeading(&mx, &my, &mz);
   //Serial.println(ntc_10k(2));
     char t1[] = "Temperatura:  ";
