@@ -11,7 +11,7 @@ void HMC5883L_config() {
     Wire.write(0x00);
     Wire.endTransmission();
 }
-void HMC5883L_read(HMC5883L *mag) {
+void HMC5883L_read(MAG *mag) {
   //Começa uma transmissão com o sensor
     Wire.beginTransmission(0x1E);
     //Enfilera os bytes a ser transmitidos para o sensor
