@@ -13,7 +13,6 @@
 #include <util/delay.h> //biblioteca para o uso das rotinas de delay
 #include <arduino.h>
 #include "Wire.h"
-#include "HMC5883L.h"
 //Definições de macros para o trabalho com bits
 #define set_bit(y,bit) (y|=(1<<bit))//coloca em 1 o bit x da variável Y
 #define clr_bit(y,bit) (y&=~(1<<bit))//coloca em 0 o bit x da variável Y
