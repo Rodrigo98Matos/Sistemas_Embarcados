@@ -35,7 +35,7 @@ void loop() {
 //  Serial.println("{\"Magnetometro\":["+String(mag.x)+String(mag.y)+String(mag.z)+"],"+"\"Acelerometro\":["+String(atitude.ax)+String(atitude.ay)
 //                 +String(atitude.az)+"],"+"\"Giroscopio\":["+String(atitude.gx)+String(atitude.gy)+String(atitude.gz)+"],"+"\"Temperatura\":"
 //                 +String(atitude.t)+"\"Pressao\":"+String(barometro));
-Serial.println("{\"Magnetometro\":["+String(mag.x)+String(mag.y)+String(mag.z)+"],"+"\"Pressao\":"+String(barometro));
+Serial.println("{\"Magnetometro\":["+String(mag_x)+String(mag_y)+String(mag_z)+"],"+"\"Pressao\":"+String(barometro));
 //  esp01.println("\"Acelerometro\":["+String(atitude.ax)+","+String(atitude.ay)+","
 //                 +String(atitude.az)+"],"+"\"Giroscopio\":["+String(atitude.gx)+String(atitude.gy)+String(atitude.gz)+"],"+"\"Temperatura\":"
 //                 +String(atitude.t));
