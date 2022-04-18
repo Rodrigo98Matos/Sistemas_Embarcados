@@ -16,21 +16,8 @@ void HMC5883L_config() {
     Wire.write(0x00);
     Wire.endTransmission();
 }
-void HMC5883L_read(MAG *mag) {
-  
-  MagnetometerScaled scaled = compass.readScaledAxis();
-                               
-    mag->x = scaled.XAxis;  //0x3B (ACCEL_XOUT_H) & 0x3C (ACCEL_XOUT_L)  
-    mag->y = scaled.YAxis;  //0x3D (ACCEL_YOUT_H) & 0x3E (ACCEL_YOUT_L)  
-    mag->z = scaled.ZAxis;  //0x3F (ACCEL_ZOUT_H) & 0x40 (ACCEL_ZOUT_L)
-}
-void MPU6050_config(){
-  Wire.beginTransmission(0x1E);
-  //Inicializa o sensor
-  Wire.write(0x6B); 
-   
-  Wire.write(1); //Configura o sensor para +-4g e +-500 °/s
-  Wire.endTransmission();
+MagnetometerScaled HMC5883L_read() {  
+  return compass.readScaledAxis();
 }
 MPU6050 MPU6050_read(){
   MPU6050 mpu;

@@ -17,7 +17,7 @@ HMC5883L compass;
 int error = 0;
 
 void HMC5883L_config();
-void HMC5883L_read(MAG *mag);
+MagnetometerScaled HMC5883L_read();
 void MPU6050_config();
 MPU6050 MPU6050_read();
 
