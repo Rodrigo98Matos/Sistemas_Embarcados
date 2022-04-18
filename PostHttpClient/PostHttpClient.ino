@@ -19,8 +19,8 @@
 #define SERVER_IP "200.137.130.88:8888"
 
 #ifndef STASSID
-#define STASSID "aldebaran"
-#define STAPSK  "21062021"
+#define STASSID "ALBERTO E ROSELIA"
+#define STAPSK  "CHAMEX5050"
 #endif
 
 void setup() {
@@ -48,8 +48,9 @@ void loop() {
   // wait for WiFi connection
   
   if ((WiFi.status() == WL_CONNECTED)) {
-
+    if(Serial.available()){
     digitalWrite(2, LOW);
+    String recebido = Serial.readString();
     WiFiClient client;
     HTTPClient http;
 
@@ -60,7 +61,7 @@ void loop() {
 
     Serial.print("[HTTP] POST...\n");
     // start connection and send HTTP header and body
-    int httpCode = http.POST("{\"acelerometro\":[10,3,4],\"bateriakkk\":24,\"equipe\":41,\"giroscopio\":[42,90,30],\"payload\":{\"classe\":{\"array1\":[12,123,543],\"valor2\":\"string\"},\"valor1\":3.1415},\"pressao\":1,\"temperatura\":30}");
+    int httpCode = http.POST(recebido);
 
     // httpCode will be negative on error
     if (httpCode > 0) {
@@ -82,5 +83,5 @@ void loop() {
     digitalWrite(2, HIGH);
   }
 
-  delay(10000);
-}
+  //delay(10000);
+  }}
