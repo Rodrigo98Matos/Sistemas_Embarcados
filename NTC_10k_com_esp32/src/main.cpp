@@ -29,7 +29,11 @@ void setup() {
 
 void loop() {
   char escala[] = "KCF";
-  ler_temp(36);
+  ler_temp(12);
+  for(int i = 0; i <= 2; i++){
+    Serial.print(temp[i]);Serial.print("\t");
+  }
+  ler_temp(14);
   for(int i = 0; i <= 2; i++){
     Serial.print(temp[i]);Serial.print("\t");
   }
