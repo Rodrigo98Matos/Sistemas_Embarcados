@@ -16,7 +16,7 @@ void ler_temp(uint8_t pin){
 
   float leitura = analogRead(pin);// lerAnalog(A0);
   Vadc = (3.3*leitura)/4095;
-  Rntc = Vadc * (10000/(3.3-Vadc));
+  Rntc = ((10000*3.3)-(Vadc*10000))/Vadc;
   temp[0] = beta/log(Rntc/Rinf);                  //Temperatura em Kelvin
   temp[1] = temp[0] - 273.15;                     //Remperatura em Celsius
   temp[2] = (temp[1] * 9/5) + 32;
@@ -30,13 +30,15 @@ void setup() {
 void loop() {
   char escala[] = "KCF";
   ler_temp(12);
-  for(int i = 0; i <= 2; i++){
-    Serial.print(temp[i]);Serial.print("\t");
-  }
+  Serial.print("Temp_bat_1:\t");
+  //for(int i = 0; i <= 2; i++){
+    Serial.print(temp[1]);Serial.print("\t");
+  //}
   ler_temp(14);
-  for(int i = 0; i <= 2; i++){
-    Serial.print(temp[i]);Serial.print("\t");
-  }
+  Serial.print("Temp_bat_2:\t");
+  //for(int i = 0; i <= 2; i++){
+    Serial.print(temp[1]);Serial.print("\t");
+  //}
   Serial.println();
   delay(500);
 }
