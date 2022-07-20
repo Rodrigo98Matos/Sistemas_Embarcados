@@ -16,7 +16,7 @@ BluetoothSerial SerialBT;
 #define dio0 2
  
 void setup() {
-  SerialBT.begin("ESP32test"); //Bluetooth device name
+  SerialBT.begin("ESP32 LoRa"); //Bluetooth device name
   Serial.begin(115200);
   while (!Serial);
  
@@ -53,11 +53,13 @@ void onReceive(int packetSize) {
     Serial.print(m);
     SerialBT.print(m);
   }
+  Serial.println();
+    SerialBT.println();
  
-  // print RSSI of packet
-  // String r = LoRa.packetRssi();
-  // Serial.print("' with RSSI ");
-  // SerialBT.println(r);
-  // Serial.print("' with RSSI ");
-  // SerialBT.println(r);
+  //print RSSI of packet
+  String r = String(LoRa.packetRssi());
+  Serial.print("' with RSSI ");
+  Serial.println(r);
+  SerialBT.print("' with RSSI ");
+  SerialBT.println(r);
 }
