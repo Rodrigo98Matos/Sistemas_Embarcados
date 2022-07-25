@@ -1,11 +1,10 @@
 #include <SPI.h>
 #include <LoRa.h>
 
-#define ss 5
-#define rst 0
-#define dio0 2
+#define ss 15
+#define rst 16
+#define dio0 4
 
-int counter = 0;
 
 void setup() {
   Serial.begin(9600);
@@ -39,7 +38,7 @@ void loop() {
   }
 
   if (Serial.available()) {
-	  String input = Serial.readString();
+    String input = Serial.readString();
     LoRa.beginPacket();
     LoRa.print(input);
     LoRa.endPacket();
