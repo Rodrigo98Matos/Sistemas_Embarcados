@@ -5,19 +5,15 @@
 #define rst 16
 #define dio0 4
 
-
 void setup() {
   Serial.begin(9600);
   while (!Serial);
-
   Serial.println("LoRa Sender");
   LoRa.setPins(ss, rst, dio0);
-
   if (!LoRa.begin(433E6)) {
     Serial.println("Starting LoRa failed!");
     while (1);
   }
-  
 }
 
 void loop() {
