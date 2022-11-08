@@ -6,19 +6,20 @@ volatile char k;
 
   
 void setup() {
-  DDRB |= (1<<5);
-  Serial.begin(115200);
+  DDRB = 0b11100000;
+  //Serial.begin(115200);
 
 }
 
 void loop() {
   volatile unsigned int i, j;
-  PORTB ^= (1<<5);
-  Serial.print("MILISSEGUNDOS:\t");
-  unsigned long t = millis();
-  espera_ms(1000);
-  t = millis()-t;
-  Serial.println(t);
+  for (unsigned char i = 0;i<=7;i++){
+  PORTB = i;
+  //Serial.print("MILISSEGUNDOS:\t");
+  //unsigned long t = millis();
+  espera_s(1);}
+  //t = millis()-t;
+  //Serial.println(t);
 }
 
 void espera_s(volatile unsigned int s){
